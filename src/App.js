@@ -14,7 +14,11 @@ function App() {
         propFuncObject={propFuncObject}
         propFuncNumber={3}
       />
-      <ClassComponent />
+      <ClassComponent
+        propFuncString={propFuncString}
+        propFuncObject={propFuncObject}
+        propFuncNumber={3}
+      />
     </>
   );
 }
