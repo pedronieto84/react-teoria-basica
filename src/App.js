@@ -1,22 +1,16 @@
 import "./App.css";
-import FunctionalComponent from "./components/functionalComponent";
-import {useState} from 'react'
+
+import ClassComponent from "./components/classComponent";
 
 function App() {
 
-  const [data, setData] = useState('')
-
-  const childToParent = (dataReceivedFromChildren) => {
-    console.log("data received", dataReceivedFromChildren);
-    setData(dataReceivedFromChildren)
-  };
+  
 
 
 
   return (
     <>
-      <h1> Data received from Children: {data}</h1>
-      <FunctionalComponent childToParent={childToParent} />
+      <ClassComponent/>
     </>
   );
 }

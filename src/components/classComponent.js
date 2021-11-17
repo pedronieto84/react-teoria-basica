@@ -3,15 +3,19 @@ import React, { Component } from "react";
 class ClassComponent extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { nom: "Joan" };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ nom: "Antoni" });
+    }, 3000);
   }
 
   render() {
     return (
       <>
-        <h1 class="card">Soc un class component</h1>;
-        <p> Props String: {this.props.propFuncString} </p>
-        <p> Props Object: {this.props.propFuncObject.que} </p>
-        <p> Props Number: {this.props.propFuncNumber} </p>
+        <h1 class="card">State: {this.state.nom} </h1>;
       </>
     );
   }
