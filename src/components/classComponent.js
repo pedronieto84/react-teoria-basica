@@ -4,7 +4,7 @@ class ClassComponent extends React.Component {
   render() {
     return (
       <>
-        <h1>Soc un class component</h1>;{" "}
+        <h1 class="card">Soc un class component</h1>;{" "}
       </>
     );
   }
