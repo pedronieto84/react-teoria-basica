@@ -15,6 +15,19 @@ class ClassComponent extends React.Component {
     console.log("component did mount");
   }
 
+  shouldComponentUpdate() {
+    console.log("should component update");
+    return true;
+  }
+
+  getSnapshotBeforeUpdate() {
+    console.log("get snapshot before update");
+  }
+
+  componentDidUpdate() {
+    console.log("component did update");
+  }
+
   render() {
     console.log("render");
     return (
