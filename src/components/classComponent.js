@@ -40,6 +40,11 @@ class ClassComponent extends React.Component {
   componentDidMount() {
     console.log("component did mount");
   }
+
+  componentWillUnmount() {
+    console.log("component did unmount");
+  }
 }
 
 export default ClassComponent;
+

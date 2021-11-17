@@ -6,20 +6,25 @@ import React, { Component } from "react";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = { data: 0 };
+    this.state = { data: 0, showChild: true };
   }
 
   render() {
+    let componentChildren;
+
+    if (this.state.showChild) {
+      componentChildren = <ClassComponent data={this.state.data} />;
+    }
     return (
       <>
         <button
           onClick={() => {
-            this.setState({ data: this.state.data + 1 });
+            this.setState({ showChild: !this.state.showChild });
           }}
         >
-          AÑADIR
+          ELIMINAR COMPONENTE HIJO
         </button>
-        <ClassComponent data={this.state.data} />
+        {componentChildren}
       </>
     );
   }
