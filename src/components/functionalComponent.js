@@ -1,12 +1,13 @@
 import React from "react";
 
-const FunctionalComponent = (props) => {
+const FunctionalComponent = ({ childToParent }) => {
+  const dataInChildren = "data from children";
   return (
     <>
       <h1> Soc un functional Component </h1>
-      <p> Props String: { props.propFuncString } </p>
-      <p> Props Object: { props.propFuncObject.que } </p>
-      <p> Props Number: { props.propFuncNumber } </p>
+      <button onClick={() => childToParent(dataInChildren)}>
+        PASAR DATA AL PARE
+      </button>
     </>
   );
 };

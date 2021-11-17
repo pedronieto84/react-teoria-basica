@@ -1,24 +1,22 @@
 import "./App.css";
-import ClassComponent from "./components/classComponent";
 import FunctionalComponent from "./components/functionalComponent";
+import {useState} from 'react'
 
 function App() {
-  const propFuncString = "soc un prop string";
-  const propFuncObject = {
-    que: "soc un prop Func OBJECT",
+
+  const [data, setData] = useState('')
+
+  const childToParent = (dataReceivedFromChildren) => {
+    console.log("data received", dataReceivedFromChildren);
+    setData(dataReceivedFromChildren)
   };
+
+
+
   return (
     <>
-      <FunctionalComponent
-        propFuncString={propFuncString}
-        propFuncObject={propFuncObject}
-        propFuncNumber={3}
-      />
-      <ClassComponent
-        propFuncString={propFuncString}
-        propFuncObject={propFuncObject}
-        propFuncNumber={3}
-      />
+      <h1> Data received from Children: {data}</h1>
+      <FunctionalComponent childToParent={childToParent} />
     </>
   );
 }
