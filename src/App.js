@@ -16,19 +16,11 @@ class App extends React.Component {
     return (
       <Router>
         <nav>
-          <Link to="/">Class </Link>
-          <Link to="/functional">Functional</Link>
-          <Link to={`/dinamic/${id}`}>Dinamic</Link>
+          <Link to="/">Functional </Link>
         </nav>
         <div>
           <Switch>
-            <Route exact path="/functional">
-              <FunctionalComponent />
-            </Route>
-            <Route exact path="/class">
-              <ClassComponent />
-            </Route>
-            <Route exact path="/dinamic/:id">
+            <Route exact path="/">
               <FunctionalComponent />
             </Route>
           </Switch>

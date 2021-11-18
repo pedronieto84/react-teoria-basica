@@ -1,15 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
+import getData from "../hooks/getData";
 
 const FunctionalComponent = () => {
-  useEffect(() => {
-    console.log("use effect");
-  });
+  const { data } = getData();
+  console.log("data", data);
 
   return (
     <>
-      <h1> Soc un Functional Component </h1>
-
-      <div>USE EFFECT</div>
+      <h1> Soc un Functional Component amb un Custom Hook: {data[0].a} </h1>
     </>
   );
 };
