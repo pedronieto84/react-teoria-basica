@@ -1,33 +1,32 @@
 import "./App.css";
 
 import ClassComponent from "./components/classComponent";
+import FunctionalComponent from "./components/functionalComponent";
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = { data: 0, showChild: true };
-  }
-
-  render() {
-    let componentChildren;
-
-    if (this.state.showChild) {
-      componentChildren = <ClassComponent data={this.state.data} />;
-    }
-    return (
-      <>
-        <button
-          onClick={() => {
-            this.setState({ showChild: !this.state.showChild });
-          }}
-        >
-          ELIMINAR COMPONENTE HIJO
-        </button>
-        {componentChildren}
-      </>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <nav>
+        <Link to="/">Class </Link>
+        <Link to="/functional">Functional</Link>
+      </nav>
+      <div>
+        <Switch>
+          <Route exact path="/functional">
+            <FunctionalComponent />
+          </Route>
+          <Route exact path="/class">
+            <ClassComponent />
+          </Route>
+          <Route exact path="/">
+            <ClassComponent />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
