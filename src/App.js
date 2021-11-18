@@ -29,7 +29,7 @@ class App extends React.Component {
               <ClassComponent />
             </Route>
             <Route exact path="/dinamic/:id">
-              <ClassComponent />
+              <FunctionalComponent />
             </Route>
           </Switch>
         </div>
